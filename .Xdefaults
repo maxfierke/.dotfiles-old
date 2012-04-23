@@ -10,9 +10,10 @@ URxvt*urgentOnBell:	true
 
 URxvt.foreground: #dcdccc
 
-!URxvt.depth: 32
-URxvt*background: #3f3f3f
-
+URxvt.depth: 32
+!URxvt*background: #3f3f3f
+!URxvt*background: rgba:3f3f/3f3f/3f3f/dddd
+URxvt.background: rgba:1111/1111/1111/dddd
 
 !URxvt*font:	xft:Terminus:9
 !URxvt*font:		-*-terminus-*-*-*-*-12-*-*-*-*-*-*-*
@@ -29,26 +30,57 @@ URxvt*matcher.button: 2
 URxvt*matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 
 ! Zenburn Color Scheme
-URxvt*colorUL: #c5f779
-URxvt*underlineColor: #c5f779
+!URxvt*colorUL: #c5f779
+!URxvt*underlineColor: #c5f779
 
-URxvt*color0:	#3f3f3f
-URxvt*color1:       #705050
-URxvt*color2:     #60b48a
-URxvt*color3:    #dfaf8f
-URxvt*color4:      #506070
-URxvt*color5:   #dc8cc3
-URxvt*color6:      #8cd0d3
-URxvt*color7:     #DCDCCC
+!URxvt*color0:	#3f3f3f
+!URxvt*color1:       #705050
+!URxvt*color2:     #60b48a
+!URxvt*color3:    #dfaf8f
+!URxvt*color4:      #506070
+!URxvt*color5:   #dc8cc3
+!URxvt*color6:      #8cd0d3
+!URxvt*color7:     #DCDCCC
 
-URxvt*color8:      #709080
-URxvt*color9:      #cc9393
-URxvt*color10:    #7f9f7f
-URxvt*color11:   #f0dfaf
-URxvt*color12:     #94bff3
-URxvt*color13:  #ec93d3
-URxvt*color14:    #93e0e3
-URxvt*color15:          #ffffff
+!URxvt*color8:      #709080
+!URxvt*color9:      #cc9393
+!URxvt*color10:    #7f9f7f
+!URxvt*color11:   #f0dfaf
+!URxvt*color12:     #94bff3
+!URxvt*color13:  #ec93d3
+!URxvt*color14:    #93e0e3
+!URxvt*color15:          #ffffff
+
+!! Fading
+URxvt*fading:	 0
+URxvt*fadeColor: #202020
+!! Fore/background color
+URxvt*background: #151515
+URxvt*foreground: #999
+!Black
+URxvt*color0:	#101010
+URxvt*color8:	#505050
+!Red
+URxvt*color1:	#a2363a
+URxvt*color9:	#ff5b62
+!!Green
+URxvt*color2:	#3ca034
+URxvt*color10:  #3ed421
+!!Yellow
+URxvt*color3:   #b3930f
+URxvt*color11:  #f1c719
+!!Blue
+URxvt*color4:   #286f8a
+URxvt*color12:  #4382c4
+!!Magenta
+URxvt*color5:   #746d76
+URxvt*color13:  #b287ba
+!!Cyan		      
+URxvt*color6:   #42ab9e
+URxvt*color14:  #9bc6c0
+!!White
+URxvt*color7:   #c0c0c0
+URxvt*color15:  #ffffff
 
 !black
 xterm*color0:         #353535
