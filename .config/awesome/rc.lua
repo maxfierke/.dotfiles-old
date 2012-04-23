@@ -40,6 +40,7 @@ beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 exec = awful.util.spawn
 terminal = "urxvt"
 browser = "firefox"
+media_player = terminal .. " -e ncmpcpp"
 cli_editor = "nano"
 gui_editor = "gedit"
 gui_fm = "pcmanfm"
@@ -75,7 +76,9 @@ layouts =
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {
-  names  = { "main", "www", "txt", "term", "files", "irc", "mail", 8, 9 },
+  names  = { "main", "www", "txt", "term", "files", "irc", "mail", "music", 
+9 
+},
   layout = { layouts[2], layouts[10], layouts[10], layouts[2], 
              layouts[2], layouts[10], layouts[10], layouts[6], layouts[1]
 }}
@@ -106,7 +109,7 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 
 -- {{{ Wibox
 -- Create a textclock widget
-mytextclock = awful.widget.textclock({ align = "right" })
+mytextclock = awful.widget.textclock({ align = "right" }, "%a %b %d, %I:%M", 60)
 
 -- Create a systray
 mysystray = widget({ type = "systray" })
@@ -253,7 +256,7 @@ globalkeys = awful.util.table.join(
     -- Prompt
     awful.key({ modkey			  }, "r",     function () mypromptbox[mouse.screen]:run() end),
     awful.key({ modkey, 		  }, "b",     function () exec(browser) end),
-    awful.key({ modkey, 		  }, "f",     function () exec(cli_fm) end),
+    awful.key({ modkey, 		  }, "f",     function () exec(gui_fm) end),
     awful.key({ modkey, 		  }, "m",     function () exec(media_player) end),
     awful.key({ modkey, 		  }, "s",     function () exec(system_monitor, false) end),
     awful.key({ modkey, 		  }, "g",     function () exec(gui_editor) end),
@@ -343,7 +346,9 @@ awful.rules.rules = {
       properties = { border_width = beautiful.border_width,
                      border_color = beautiful.border_normal,
                      focus = true,
-                     keys = clientkeys,
+                     keys = clientkeys, 
+                     maximized_vertical   = false,
+                     maximized_horizontal = false,
                      buttons = clientbuttons } },
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
@@ -352,8 +357,8 @@ awful.rules.rules = {
     { rule = { class = "gimp" },
       properties = { floating = true } },
     -- Set Firefox to always map on tags number 2 of screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { tag = tags[1][2] } },
+    { rule = { class = "Firefox" },
+      properties = { tag = tags[1][2] } },
 }
 -- }}}
 
